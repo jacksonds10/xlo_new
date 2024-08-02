@@ -19,7 +19,7 @@ class CategoryField extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w700, color: Colors.grey, fontSize: 18),
           ):Text(
-            'Categoria *',
+            'Categorias *',
             style: TextStyle(
                 fontWeight: FontWeight.w700, color: Colors.grey, fontSize: 14),
           ),
