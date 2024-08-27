@@ -13,7 +13,7 @@ class UserRepository {
 
     final response = await parseUser.signUp();
     if (response.success) {
-      print(response.result);
+      // print(response.result);
     } else {
       return Future.error(ParseErrors.getDescription(response.error.code));
     }

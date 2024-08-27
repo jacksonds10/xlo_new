@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:parse_server_sdk/parse_server_sdk.dart';
 import 'package:xlo_new/repositories/category_repository.dart';
+import 'package:xlo_new/repositories/cep_repository.dart';
+import 'package:xlo_new/repositories/ibge_repository.dart';
 import 'package:xlo_new/screens/base/base/base_screen.dart';
 import 'package:xlo_new/screens/category/category_screen.dart';
 import 'package:xlo_new/store/category_store.dart';
@@ -15,6 +17,11 @@ void main() async {
   setupLocators();
   runApp(MyApp());
 
+  // IBGERpository().getUFList().then((value) {
+  //    IBGERpository().getUFList().then((value)=> print(value));
+  // // IBGERpository().getCityListFromApi(value.first).then((value) => print(value));
+
+  // });
 
 //  final category = ParseObject('Categories')..set('Title','Camisetas')..set('Position',2);
 //  final response = await category.save();
@@ -64,7 +71,7 @@ Future<void> initializeParse() async {
       autoSendSessionId: true,
       debug: true);
 final categorias = await CategoryRepository().getList();
-print(categorias);
+// print(categorias);
 }
 
 class MyApp extends StatelessWidget {
