@@ -2,6 +2,7 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:xlo_new/components/category_field.dart';
+import 'package:xlo_new/components/cep_field.dart';
 import 'package:xlo_new/components/custom_drawer.dart';
 import 'package:xlo_new/components/images_field.dart';
 import 'package:xlo_new/store/create_store.dart';
@@ -48,6 +49,7 @@ class CreateScreen extends StatelessWidget {
               maxLines: 3,
             ),
             CategoryField(createStore),
+            CepField(),
             TextFormField(
               decoration: InputDecoration(
                   labelText: 'Preço*',

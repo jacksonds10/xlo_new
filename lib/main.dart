@@ -9,14 +9,24 @@ import 'package:xlo_new/screens/category/category_screen.dart';
 import 'package:xlo_new/store/category_store.dart';
 import 'package:xlo_new/store/page_store.dart';
 import 'package:xlo_new/store/user_manager_store.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeParse();
+
   setupLocators();
   runApp(MyApp());
 
+Future<void> initializeParse() async {
+  await Parse().initialize('4FTscYPWTqRfcSaWP9q00MVt2rGMs7Kp2My6rc2a',
+      'https://parseapi.back4app.com/',
+      clientKey: 'l0r2LfizupSpMTC39SevKQII8O6Y9a3LjtXbqtaI',
+      autoSendSessionId: true,
+      debug: true);
+final categorias = await CategoryRepository().getList();
+// // print(categorias);
+ }
   // IBGERpository().getUFList().then((value) {
   //    IBGERpository().getUFList().then((value)=> print(value));
   // // IBGERpository().getCityListFromApi(value.first).then((value) => print(value));
@@ -64,16 +74,15 @@ void setupLocators(){
   GetIt.I.registerSingleton(CategoryStore());
 }
 
-Future<void> initializeParse() async {
-  await Parse().initialize('4FTscYPWTqRfcSaWP9q00MVt2rGMs7Kp2My6rc2a',
-      'https://parseapi.back4app.com/',
-      clientKey: 'l0r2LfizupSpMTC39SevKQII8O6Y9a3LjtXbqtaI',
-      autoSendSessionId: true,
-      debug: true);
-final categorias = await CategoryRepository().getList();
-// print(categorias);
-}
-
+// Future<void> initializeParse() async {
+//   await Parse().initialize('4FTscYPWTqRfcSaWP9q00MVt2rGMs7Kp2My6rc2a',
+//       'https://parseapi.back4app.com/',
+//       clientKey: 'l0r2LfizupSpMTC39SevKQII8O6Y9a3LjtXbqtaI',
+//       autoSendSessionId: true,
+//       debug: true);
+// final categorias = await CategoryRepository().getList();
+// // print(categorias);
+// }
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override

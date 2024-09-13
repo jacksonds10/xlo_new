@@ -7,7 +7,7 @@ class Address {
     this.uf,
     this.city,
     this.cep,
-    this.district
+    this.district, logradouro
   });
   UF uf;
   City city;
